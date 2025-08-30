@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Log4j2 Configuration File
+  - Uses JSON logging via JsonTemplateLayout
+  - Writes logs to both file and console
+-->
+<Configuration status="WARN">
+  <!-- Appenders define where log messages are sent -->
+  <Appenders>
+    <!-- File appender: writes logs in JSON format to logs/users-app.log -->
+    <File name="JsonFile" fileName="logs/users-app.log">
+      <!-- JsonTemplateLayout: formats logs as JSON using ECS template -->
+      <JsonTemplateLayout eventTemplateUri="classpath:EcsLayout.json" locationInfoEnabled="true" stackTraceEnabled="true" />
+    </File>
+    <!-- Console appender: outputs logs in JSON format to the terminal -->
+    <Console name="Console" target="SYSTEM_OUT">
+      <JsonTemplateLayout  eventTemplateUri="classpath:EcsLayout.json" locationInfoEnabled="true" stackTraceEnabled="true"/>
+    </Console>
+  </Appenders>
+  <!-- Loggers control logging levels and which appenders are used -->
+  <Loggers>
+    <!-- Root logger: logs at INFO level and above, sends to both file and console -->
+    <Root level="info">
+      <AppenderRef ref="JsonFile"/>
+      <AppenderRef ref="Console"/>
+    </Root>
+  </Loggers>
+</Configuration>
