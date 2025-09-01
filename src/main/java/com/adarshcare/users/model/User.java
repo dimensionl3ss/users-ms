@@ -1,17 +1,17 @@
 package com.adarshcare.users.model;
 
-import org.springframework.data.mongodb.core.annotation.Collation;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Collation(value="users")
+@Document(collection = "users")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class User {
-    
+
     private String id;
     private String name;
     private String email;
@@ -27,4 +27,5 @@ public class User {
     private String role; // e.g., "USER", "ADMIN"
     private String profilePictureUrl;
     private String dateOfBirth;
+
 }
