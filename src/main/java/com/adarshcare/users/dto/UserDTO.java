@@ -1,5 +1,7 @@
 package com.adarshcare.users.dto;
 
+import java.time.LocalDate;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,6 +22,6 @@ public class UserDTO {
     private String countryCode;
     private String role; // e.g., "USER", "ADMIN"
     private String profilePictureUrl;
-    private String dateOfBirth;
+    private LocalDate dateOfBirth;
     
 }

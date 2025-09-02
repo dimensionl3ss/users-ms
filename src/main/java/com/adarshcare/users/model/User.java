@@ -1,5 +1,8 @@
 package com.adarshcare.users.model;
 
+import java.time.LocalDate;
+
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.AllArgsConstructor;
@@ -11,10 +14,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class User {
-
-    private String id;
-    private String name;
+    @Id
     private String email;
+    private String name;
     private String password;
     private String addressLine1;
     private String addressLine2;
@@ -26,6 +28,6 @@ public class User {
     private String countryCode;
     private String role; // e.g., "USER", "ADMIN"
     private String profilePictureUrl;
-    private String dateOfBirth;
+    private LocalDate dateOfBirth;
 
 }
