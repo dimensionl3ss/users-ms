@@ -8,6 +8,7 @@ import com.adarshcare.users.dto.UserRegistrationDTO;
 public interface UserService {
     UserDTO registerUser(UserRegistrationDTO userRegistrationDTO); 
     UserDTO getUserbyId(String userId);
+    UserDTO getUserByEmail(String email);
     List<UserDTO> getAllUsers();
     UserDTO updateUser(String userId, UserDTO userDTO);
     void deleteUser(String userId);

@@ -17,4 +17,9 @@ public class ExceptionAdvice {
     public ResponseEntity<Error> handleResourceNotFound(ResourceNotFound ex) {
         return ResponseEntity.status(404).body(new Error(new Date(), ex.getMessage(), 404));
     }
+    
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<Error> handleIllegalArgumentException(IllegalArgumentException ex) {
+        return ResponseEntity.status(400).body(new Error(new Date(), ex.getMessage(), 400));
+    }
 }
